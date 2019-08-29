@@ -1,0 +1,263 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <title>Code coverage report for src/components/MetaWallet.tsx</title>
+    <meta charset="utf-8" />
+    <link rel="stylesheet" href="..\..\prettify.css" />
+    <link rel="stylesheet" href="..\..\base.css" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <style type='text/css'>
+        .coverage-summary .sorter {
+            background-image: url(..\..\sort-arrow-sprite.png);
+        }
+    </style>
+</head>
+<body>
+<div class='wrapper'>
+  <div class='pad1'>
+    <h1>
+      <a href="..\..\index.html">All files</a> / <a href="index.html">src/components</a> MetaWallet.tsx
+    </h1>
+    <div class='clearfix'>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">16.67% </span>
+        <span class="quiet">Statements</span>
+        <span class='fraction'>18/108</span>
+      </div>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">12.94% </span>
+        <span class="quiet">Branches</span>
+        <span class='fraction'>11/85</span>
+      </div>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">17.39% </span>
+        <span class="quiet">Functions</span>
+        <span class='fraction'>4/23</span>
+      </div>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">26.09% </span>
+        <span class="quiet">Lines</span>
+        <span class='fraction'>18/69</span>
+      </div>
+    </div>
+  </div>
+  <div class='status-line low'></div>
+<pre><table class="coverage">
+<tr><td class="line-count quiet">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25
+26
+27
+28
+29
+30
+31
+32
+33
+34
+35
+36
+37
+38
+39
+40
+41
+42
+43
+44
+45
+46
+47
+48
+49
+50
+51
+52
+53
+54
+55
+56
+57
+58
+59
+60
+61
+62
+63
+64
+65
+66
+67</td><td class="line-coverage quiet"><span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">import * as React from "react";
+import * as TruffleContract from "truffle-contract";
+import * as Web3 from "web3";
+<span class="cstat-no" title="statement not covered" ><span class="fstat-no" title="function not covered" ><span class="branch-2 cbranch-no" title="branch not covered" ><span class="branch-1 cbranch-no" title="branch not covered" ></span></span></span></span>
+const Me<span class="fstat-no" title="function not covered" ><span class="branch-3 cbranch-no" title="branch not covered" >ta</span>CoinContract = T<span class="cstat-no" title="statement not covered" >ruffleContract(re<span class="cstat-no" title="statement not covered" >quire("../../build/contra<span class="cstat-no" title="statement not covered" >cts/MetaCoin.</span></span></span>js</span>on"));
+import IMetaCoin from "../contract-interfaces/IMetaCoin";
+&nbsp;
+interface IMetaWalletProps {
+  web3: Web3;<span class="branch-0 cbranch-no" title="branch not covered" ></span>
+}
+&nbsp;
+interface IMetaWalletState {<span class="fstat-no" title="function not covered" ></span>
+  ac<span class="cstat-no" title="statement not covered" >count: string;<span class="fstat-no" title="function not covered" ></span></span>
+  accountError: b<span class="fstat-no" title="function not covered" >oolean;<span class="cstat-no" title="statement not covered" ><span class="cstat-no" title="statement not covered" ><span class="cstat-no" title="statement not covered" ></span></span></span></span>
+  balance: string<span class="fstat-no" title="function not covered" >;<span class="cstat-no" title="statement not covered" ><span class="cstat-no" title="statement not covered" ><span class="cstat-no" title="statement not covered" ></span></span></span></span>
+  contractAddress<span class="fstat-no" title="function not covered" >: str</span>ing;<span class="cstat-no" title="statement not covered" ><span class="cstat-no" title="statement not covered" ><span class="fstat-no" title="function not covered" ></span></span></span>
+}<span class="cstat-no" title="statement not covered" ></span>
+&nbsp;
+export default class MetaWallet extends React.Component&lt;IMetaWalletProps, IMetaWalletState&gt; {
+  constructor(props) {<span class="fstat-no" title="function not covered" ></span>
+    super(pr<span class="cstat-no" title="statement not covered" >ops);<span class="cstat-no" title="statement not covered" ><span class="cstat-no" title="statement not covered" ><span class="cstat-no" title="statement not covered" ><span class="fstat-no" title="function not covered" ></span></span></span></span></span>
+<span class="cstat-no" title="statement not covered" >    this.state = {<span class="cstat-no" title="statement not covered" ><span class="fstat-no" title="function not covered" ></span></span></span>
+      account<span class="fstat-no" title="function not covered" >: "",<span class="cstat-no" title="statement not covered" ><span class="cstat-no" title="statement not covered" ><span class="fstat-no" title="function not covered" ></span></span></span></span>
+      account<span class="fstat-no" title="function not covered" >Error</span>: false,
+      ba<span class="cstat-no" title="statement not covered" >lance: <span class="cstat-no" title="statement not covered" >"",</span></span>
+      co<span class="cstat-no" title="statement not covered" >ntractAddr<span class="cstat-no" title="statement not covered" >ess: "",</span></span>
+    };<span class="cstat-no" title="statement not covered" ><span class="cstat-no" title="statement not covered" ></span></span>
+  }<span class="cstat-no" title="statement not covered" ><span class="cstat-no" title="statement not covered" ></span></span>
+<span class="cstat-no" title="statement not covered" ></span>
+  public async componentWillMoun<span class="cstat-no" title="statement not covered" >t() {<span class="cstat-no" title="statement not covered" ></span></span>
+    if (this.props.web3.<span class="cstat-no" title="statement not covered" >eth.account<span class="cstat-no" title="statement not covered" ></span>s.length === 0) {</span>
+      this.setState({<span class="cstat-no" title="statement not covered" ><span class="cstat-no" title="statement not covered" ><span class="cstat-no" title="statement not covered" ><span class="cstat-no" title="statement not covered" ></span></span></span></span>
+        account: "",<span class="cstat-no" title="statement not covered" ><span class="cstat-no" title="statement not covered" ><span class="cstat-no" title="statement not covered" ></span></span></span>
+        accountError: true,
+      });<span class="cstat-no" title="statement not covered" ><span class="cstat-no" title="statement not covered" ><span class="cstat-no" title="statement not covered" ></span></span></span>
+      return;<span class="cstat-no" title="statement not covered" ><span class="cstat-no" title="statement not covered" ><span class="cstat-no" title="statement not covered" ></span></span></span>
+    }<span class="cstat-no" title="statement not covered" ><span class="cstat-no" title="statement not covered" ><span class="cstat-no" title="statement not covered" ><span class="cstat-no" title="statement not covered" ></span></span></span></span>
+    MetaCoinContract<span class="cstat-no" title="statement not covered" >.setProvider(this.props.web<span class="cstat-no" title="statement not covered" >3.currentProvide<span class="cstat-no" title="statement not covered" ></span>r);<span class="cstat-no" title="statement not covered" ></span></span></span>
+    let instance: IM<span class="cstat-no" title="statement not covered" >etaCoin;<span class="cstat-no" title="statement not covered" ></span></span>
+    try {<span class="cstat-no" title="statement not covered" ><span class="cstat-no" title="statement not covered" ></span></span>
+      instance = await MetaCoinContract.deployed();
+    } catch <span class="cstat-no" title="statement not covered" >(err) {</span>
+      alert(err);<span class="cstat-no" title="statement not covered" ><span class="cstat-no" title="statement not covered" ><span class="cstat-no" title="statement not covered" ></span></span></span>
+      re<span class="cstat-no" title="statement not covered" >turn;<span class="cstat-no" title="statement not covered" ><span class="cstat-no" title="statement not covered" ></span></span></span>
+    }
+&nbsp;
+    const balance  = await instance.getBalance(this.props.web3.eth.accounts[0]);
+    this.setState({
+      account: this.props.web3.eth.accounts[0],
+      accountError: false,
+      balance: balance.toString(),
+      contractAddress: instance.address,
+    });<span class="fstat-no" title="function not covered" ></span>
+  }<span class="cstat-no" title="statement not covered" ></span>
+<span class="cstat-no" title="statement not covered" ></span>
+  public render() {
+    return (
+    &lt;div&gt;
+      &lt;h3&gt;MetaCoin&lt;/h3&gt;
+      &lt;p&gt;Contract address: {this.state.contractAddress}&lt;/p&gt;
+      &lt;p<span class="cstat-no" title="statement not covered" >&gt;Account: {thi</span>s.state.accountError ? "No accounts found" : this.state.account}&lt;/p&gt;
+      &lt;p&gt;Balance: {this.state.balance}&lt;/p&gt;
+    &lt;/div&gt;<span class="fstat-no" title="function not covered" ></span>
+    );<span class="cstat-no" title="statement not covered" ><span class="fstat-no" title="function not covered" ></span></span>
+  }
+}<span class="cstat-no" title="statement not covered" ><span class="fstat-no" title="function not covered" ></span></span>
+<span class="cstat-no" title="statement not covered" ></span></pre></td></tr>
+</table></pre>
+<div class='push'></div><!-- for sticky footer -->
+</div><!-- /wrapper -->
+<div class='footer quiet pad2 space-top1 center small'>
+  Code coverage
+  generated by <a href="https://istanbul.js.org/" target="_blank">istanbul</a> at Mon Jul 08 2019 01:07:16 GMT-0700 (Pacific Daylight Time)
+</div>
+</div>
+<script src="..\..\prettify.js"></script>
+<script>
+window.onload = function () {
+        if (typeof prettyPrint === 'function') {
+            prettyPrint();
+        }
+};
+</script>
+<script src="..\..\sorter.js"></script>
+</body>
+</html>

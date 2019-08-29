@@ -1,0 +1,155 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <title>Code coverage report for src/util/getWeb3.ts</title>
+    <meta charset="utf-8" />
+    <link rel="stylesheet" href="..\..\prettify.css" />
+    <link rel="stylesheet" href="..\..\base.css" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <style type='text/css'>
+        .coverage-summary .sorter {
+            background-image: url(..\..\sort-arrow-sprite.png);
+        }
+    </style>
+</head>
+<body>
+<div class='wrapper'>
+  <div class='pad1'>
+    <h1>
+      <a href="..\..\index.html">All files</a> / <a href="index.html">src/util</a> getWeb3.ts
+    </h1>
+    <div class='clearfix'>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">47.06% </span>
+        <span class="quiet">Statements</span>
+        <span class='fraction'>8/17</span>
+      </div>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">25% </span>
+        <span class="quiet">Branches</span>
+        <span class='fraction'>1/4</span>
+      </div>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">66.67% </span>
+        <span class="quiet">Functions</span>
+        <span class='fraction'>2/3</span>
+      </div>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">47.06% </span>
+        <span class="quiet">Lines</span>
+        <span class='fraction'>8/17</span>
+      </div>
+    </div>
+  </div>
+  <div class='status-line low'></div>
+<pre><table class="coverage">
+<tr><td class="line-count quiet">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25
+26
+27
+28
+29
+30
+31</td><td class="line-coverage quiet"><span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">import * as Web3 from "web3";
+&nbsp;
+let p: Promise&lt;Web3&gt;;
+&nbsp;
+const getWeb3 = (): Promise&lt;Web3&gt; =&gt; {
+  if<span class="missing-if-branch" title="else path not taken" >E</span> (!p) {
+    p = new Promise&lt;Web3&gt;((resolve, reject) =&gt; {
+      // Wait for loading completion to avoid race conditions with web3 injection timing.
+      window.addEventListener("load", () =&gt; <span class="fstat-no" title="function not covered" >{</span>
+        let web3: Web3 = (w<span class="cstat-no" title="statement not covered" >indow as any</span>).web3 as Web3;
+&nbsp;
+        // Check<span class="cstat-no" title="statement not covered" >ing if Web3 has been injected by the browser (Mist/MetaMask)</span>
+        if (typeof w<span class="cstat-no" title="statement not covered" >eb3 !== "undefined") {</span>
+          console.lo<span class="cstat-no" title="statement not covered" >g("Using injected web3 provider");</span>
+          web3 = new Web3(web3.currentProvider);
+        } else {
+          // Fallback to localhost if no web3 injection.
+          console.lo<span class="cstat-no" title="statement not covered" >g("No web3 instance injected, using Local web3.");</span>
+          const provider = new Web3<span class="cstat-no" title="statement not covered" >.providers.HttpProvider("http://localhost:8545");</span>
+          web3 = new<span class="cstat-no" title="statement not covered" > Web3(provider);</span>
+        }
+        (window <span class="cstat-no" title="statement not covered" >as any).web3 = web3;</span>
+        resolve(<span class="cstat-no" title="statement not covered" >web3);</span>
+      });
+    });
+  }
+  return p;
+};
+&nbsp;
+export default getWeb3;
+&nbsp;</pre></td></tr>
+</table></pre>
+<div class='push'></div><!-- for sticky footer -->
+</div><!-- /wrapper -->
+<div class='footer quiet pad2 space-top1 center small'>
+  Code coverage
+  generated by <a href="https://istanbul.js.org/" target="_blank">istanbul</a> at Mon Jul 08 2019 01:07:16 GMT-0700 (Pacific Daylight Time)
+</div>
+</div>
+<script src="..\..\prettify.js"></script>
+<script>
+window.onload = function () {
+        if (typeof prettyPrint === 'function') {
+            prettyPrint();
+        }
+};
+</script>
+<script src="..\..\sorter.js"></script>
+</body>
+</html>
